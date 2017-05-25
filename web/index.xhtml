@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        Normal: 
+        <h:outputText value="#{exemploMB.data}"/><br/>
+        Padrão dd.MM.yy:
+        <h:outputText value="#{exemploMB.data}">
+            <f:convertDateTime pattern="dd/MM/yyyy"/>
+        </h:outputText><br/>
+        Estilo long:
+        <h:outputText value="#{exemploMB.data}">
+            <f:convertDateTime dateStyle="long"/>
+        </h:outputText>
+        <h:form>
+            <h:inputText value="#{exemploMB.data}">
+                <f:convertDateTime pattern="dd/MM/yyyy"/>
+            </h:inputText> <br/>             
+            <h:commandButton value="Alterar"/>
+        </h:form>  
+        <!-- 
+        Atributos da tag <f:convertDateTime>:
+        pattern: Padrõa para apresentação da data (Definido em SimpleDateFormat) (exemplo: dd/MM/yyyy)
+        type: para especificar se a data, a hora ou os dois serão apresentados (date (default), time, both)
+        dateStyle: estilo da data a ser apresentada (default, short, medium, long, full)
+        timeStyle: estilo de apresentação da hora (default, short, medium, long, full), somente se type for time ou both
+        Locale: preferênias regionais (do local) a serem utilizadas nas conversões (exemplo: pt_BR)
+        -->
+    </h:body>
+</html>
+
